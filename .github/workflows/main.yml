@@ -29,6 +29,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install Allure CLI
+        run: |
+          npm install -g allure-commandline --save-dev
+
       - name: Run Cypress tests
         run: npx cypress run --env allure=true --browser chrome
         env:
