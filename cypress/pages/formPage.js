@@ -14,11 +14,11 @@ class formPage {
             )
     }
 
-    preencheFormulario() {
+    preencheFormulario(nome, sobrenome) {
 
         //dados do aluno
-        formElements.txt_nome().should('be.visible').type("João")
-        formElements.txt_sobrenome().should('be.visible').type("Eiras")
+        formElements.txt_nome().should('be.visible').type(nome)
+        formElements.txt_sobrenome().should('be.visible').type(sobrenome)
         formElements.select_dataDia().should('be.visible').select(2)
         formElements.select_dataMes().should('be.visible').select('January')
         formElements.select_dataAno().should('be.visible').select('2025')
