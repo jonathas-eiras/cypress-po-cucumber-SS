@@ -30,7 +30,7 @@ jobs:
         run: npm install
 
       - name: Run Cypress tests
-        run: npx cypress run || true
+        run: npx cypress run --browser chrome || true
         env:
           CI: true
           

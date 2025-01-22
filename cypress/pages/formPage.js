@@ -106,7 +106,7 @@ class formPage {
         formElements.btn_submitForm().should('be.visible')
 
         formElements.btn_submitForm().click({ force: true })
-        cy.wait('@mockCaptcha')
+
     }
 
 

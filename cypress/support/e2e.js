@@ -23,17 +23,4 @@ beforeEach(() => {
 
     cy.abrirForm()
 
-    cy.intercept('POST', 'https://api2.hcaptcha.com/**', {
-
-        statusCode: 200,
-        body: { success: true },
-
-    }).as('mockCaptcha')
-
-    
-
-
-    
-
-
 })
