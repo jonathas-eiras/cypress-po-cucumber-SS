@@ -7,16 +7,23 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       on('file:preprocessor', cucumber());
-      allureWriter(on, config);
+      require('cypress-mochawesome-reporter/plugin')(on);
       return config;
     },
-    //baseUrl: "https://github.com",
+   
     baseUrl: "https://www.jotform.com/form/250203944883661#preview",
     specPattern: "cypress/e2e/step_definitions/*.feature",
     supportFile: 'cypress/support/e2e.js',
     hideCredentials: true,
-    chromeWebSecurity: false
+    chromeWebSecurity: false,
 
+    reporter: 'cypress-mochawesome-reporter',
+    reporterOptions: {
+      reportDir: "cypress/reports",
+      overwrite: false,
+      html: true,
+      json: true,
+    },
 
   },
   video: true,

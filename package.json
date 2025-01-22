@@ -21,7 +21,6 @@
     "cypress-cucumber-preprocessor": "^4.3.1"
   },
   "dependencies": {
-    "allure-cypress": "^3.0.9",
-    "cypress-iframe": "^1.0.1"
+    "cypress-mochawesome-reporter": "^3.8.2"
   }
 }
