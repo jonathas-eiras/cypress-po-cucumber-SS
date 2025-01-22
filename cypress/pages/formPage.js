@@ -104,6 +104,9 @@ class formPage {
     validateCreatedRepository() {
         cy.url().should('be.equal', "https://submit.jotform.com/submit/250203944883661")
         formElements.btn_submitForm().should('be.visible')
+
+        formElements.btn_submitForm().click({ force: true })
+        cy.wait('@mockCaptcha')
     }
 
 
