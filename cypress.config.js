@@ -1,8 +1,6 @@
 const cucumber = require('cypress-cucumber-preprocessor').default
 const { defineConfig } = require('cypress')
 
-const allureWriter = require('@shelex/cypress-allure-plugin/writer');
-
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
@@ -11,7 +9,7 @@ module.exports = defineConfig({
       return config;
     },
    
-    baseUrl: "https://www.jotform.com/form/250203944883661#preview",
+    baseUrl: "https://form.jotform.com/250225776387667",
     specPattern: "cypress/e2e/step_definitions/*.feature",
     supportFile: 'cypress/support/e2e.js',
     hideCredentials: true,

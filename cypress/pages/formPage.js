@@ -41,10 +41,10 @@ class formPage {
         formElements.select_pais().should('be.visible').select("Brazil")
 
         //razoes para referencia
-        formElements.check_areaAcademicaMatematica().should('be.visible').check()
-        formElements.check_areaAcademicaLeitura().should('be.visible').check()
-        formElements.check_areaAcademicaOutro().should('be.visible').check()
-        formElements.check_comportamentoExtroIntro().should('be.visible').check()
+        formElements.check_areaAcademicaMatematica().should('be.visible').check({force:true})
+        formElements.check_areaAcademicaLeitura().should('be.visible').check({force:true})
+        formElements.check_areaAcademicaOutro().should('be.visible').check({force:true})
+        formElements.check_comportamentoExtroIntro().should('be.visible').check({force:true})
 
         //presenca
         formElements.txt_anoAnteriorDiasPresentes().should('be.visible').type("10")
@@ -60,7 +60,7 @@ class formPage {
         formElements.select_triagemDataDia().should('be.visible').select(5)
         formElements.select_triagemDataAno().should('be.visible').select('2025')
         formElements.txt_resultados().should('be.visible').type("otimo")
-        formElements.radio_necessitaReavaliacaoNao().should('be.visible').check()
+        formElements.radio_necessitaReavaliacaoNao().should('be.visible').check({force:true})
         formElements.select_dataNascimentoMes().should('be.visible').select('April')
         formElements.select_dataNascimentoDia().should('be.visible').select(23)
         formElements.select_dataNascimentoAno().should('be.visible').select('2001')
@@ -68,7 +68,7 @@ class formPage {
         formElements.select_visaoDia().should('be.visible').select(23)
         formElements.select_visaoAno().should('be.visible').select('2024')
         formElements.txt_resultado().should('be.visible').type("otimo")
-        formElements.radio_rechecagemSim().should('be.visible').check()
+        formElements.radio_rechecagemSim().should('be.visible').check({force:true})
         formElements.txt_necessidadesEspecias().should('be.visible').type("não")
 
         //disciplina
@@ -102,10 +102,7 @@ class formPage {
 
 
     validateCreatedRepository() {
-        cy.url().should('be.equal', "https://submit.jotform.com/submit/250203944883661")
-        formElements.btn_submitForm().should('be.visible')
-
-        formElements.btn_submitForm().click({ force: true })
+        formElements.img_thankyou().should('be.visible')
 
     }
 
